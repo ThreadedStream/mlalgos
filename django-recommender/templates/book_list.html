@@ -1,0 +1,9 @@
+{% block content %}
+    <h1>Books</h1>
+    {% for book in books%}
+        <img src="{{book.image_link}}" 
+        width=200px height=300px align="left">
+        <h3><a href="{{book.id}}">{{ book.title }}</a></h3>
+        <p> {{ book.price }}</p>
+    {% endfor %}
+{% endblock content %}
