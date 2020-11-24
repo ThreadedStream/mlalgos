@@ -6,5 +6,15 @@
     <p>{{book.description}}</p>
     <p>{{book.price}}</p>
     <button>Buy</button>
-    
+    <h1>Recommended ones: </h1>
+    <ul>
+        {% for rec_book in to_recommend %}
+            <li style="list-style-type: none; display: inline;"><img src="{{rec_book.image_link}}" 
+                width=200px height=300px>
+                <h3><a href={% url 'detailed_book' pk=rec_book.id %}>{{ rec_book.title }}</a></h3>
+                <p> {{ rec_book.price }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
 {% endblock content %}
