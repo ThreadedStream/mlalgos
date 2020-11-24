@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bookapp',
+    'recommender',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +79,11 @@ WSGI_APPLICATION = 'mlproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME':  os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'USER' : 'postgres',
+        # 'PASSWORD' : '',
+        # 'HOST' : 'localhost',
+        # 'PORT' : '5432'
     }
 }
 
